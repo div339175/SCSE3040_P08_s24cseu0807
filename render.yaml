@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: scse3040-p08-s24cseu0807
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
