@@ -8,7 +8,11 @@ import os
 app = FastAPI(
     title="SCSE3040 MLOps Delivery Time Prediction API",
     description="Production REST API serving the Delivery Time Prediction Model for Practical 08 — SCSE3040.",
-    version="1.0.0"
+    version="1.0.0",
+    servers=[
+        {"url": "https://scse3040-p08-s24cseu0807.onrender.com", "description": "Cloud Production Server (Render)"},
+        {"url": "https://2873-104-28-193-14.ngrok-free.app", "description": "Cloud Edge Ingress Gateway"}
+    ]
 )
 
 # Enable CORS for external client accessibility
